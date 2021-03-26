@@ -17,6 +17,7 @@ import com.cos.baseballexam.service.GroundService;
 import com.cos.baseballexam.service.PlayerService;
 import com.cos.baseballexam.service.TeamService;
 import com.cos.baseballexam.util.Script;
+import com.cos.baseballexam.web.dto.PlayerPositionRespDto;
 import com.cos.baseballexam.web.dto.PlayerSaveReqDto;
 
 import lombok.RequiredArgsConstructor;
@@ -34,10 +35,12 @@ public class PlayerController {
 		List<Player> players = playerService.선수조회();
 		List<Ground> grounds = groundService.야구장조회();
 		List<Team> teams = teamService.팀조회();
+		List<PlayerPositionRespDto> dtos = playerService.포지션별선수조회();
 		
 		model.addAttribute("players",players);
 		model.addAttribute("grounds",grounds);
 		model.addAttribute("teams",teams);
+		model.addAttribute("dtos", dtos);
 		
 		return "index";
 	}

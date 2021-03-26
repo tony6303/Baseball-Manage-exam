@@ -110,6 +110,27 @@
           </c:forEach>
         </tbody>
       </table>
+      <h4>포지션별 선수 리스트</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>NO</th>
+            <th>롯데</th>
+            <th>삼성</th>
+            <th>대구</th>
+          </tr>
+        </thead>
+        <tbody>
+          <c:forEach var="dto" items="${dtos }">
+          <tr>
+             <td>${dto.position }</td>
+             <td>${dto.lotte }</td>
+             <td>${dto.samsung }</td>
+             <td>${dto.daegu}</td>
+           </tr>
+          </c:forEach>
+        </tbody>
+      </table>
     </div>
   </body>
 
